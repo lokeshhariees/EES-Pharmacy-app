@@ -1,0 +1,50 @@
+<html>
+    <body >
+    <h1>Customer name : {{bill.customer_name}}</h1>
+
+
+    <a href="{{bill.add_product}}"> Add a product</a><br>
+    <br>
+
+    <table style="text-align:center;">
+        <tr>
+            <th> Product Name</th>
+            <th> Quantity</th>
+            <th> Price </th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{product.bill_product.product_name }} </td>
+            <td>{{product.quantity}}</td>
+            <td>
+                {{ product.bill_product.product_price}}
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+
+        </tr>
+        <tr>
+            <td>
+                GST
+            </td>
+            <td></td>
+            <td>
+                2.0
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Total sum</b> 
+            </td>
+            <td></td>
+            <td>
+                {{bill.total_sum}}   /-
+            </td>
+        </tr>
+    </table>
+
+
+            
+    </body>
+</html>
